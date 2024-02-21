@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
+<module external.linked.project.id="pikabook" external.linked.project.path="$MODULE_DIR$/../../pikabook" external.root.project.path="$MODULE_DIR$/../../pikabook" external.system.id="GRADLE" external.system.module.group="com" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../pikabook">
+      <excludeFolder url="file://$MODULE_DIR$/../../pikabook/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../pikabook/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../pikabook/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="ee4fa727-f4e2-4da9-875d-ddbea0bd6f71" />
   </component>
