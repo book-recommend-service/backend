@@ -1,5 +1,7 @@
 package com.pikabook;
 
+import com.pikabook.entity.Book;
+import com.pikabook.entity.BookDto;
 import lombok.ToString;
 
 import java.util.ArrayList;

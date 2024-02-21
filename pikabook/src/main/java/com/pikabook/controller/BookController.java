@@ -1,30 +1,32 @@
-package com.pikabook;
+package com.pikabook.controller;
 
+import com.pikabook.entity.Book;
+import com.pikabook.entity.BookDto;
+import com.pikabook.service.BookService;
+import com.pikabook.enumClass.SearchType;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-@Controller
 @RequiredArgsConstructor
 @Slf4j
 @RequestMapping("/api")
 @ToString
+@RestController
 public class BookController {
     private final BookService bookService;
 
 
-    @ResponseBody
     @PostMapping("/")
     public Book addBooK(@RequestBody Book book) {
         bookService.save(book);
         return book;
     }
 
-    @ResponseBody
+
     @GetMapping("/{id}")
     public Book getBook(@PathVariable("id") Long id) {
         Book book = bookService.findById(id);
@@ -52,7 +54,7 @@ public class BookController {
      * @return
      */
     // 장르(8개)로 키워드 뽑기
-    @ResponseBody
+
     @GetMapping("/keyword")
     public String[] getKeywordByGenre(@RequestParam("tag") String tag) {
         List<Book> books = bookService.findByGenre(tag);
@@ -78,7 +80,7 @@ public class BookController {
         return keywords;
     }
 
-    @ResponseBody
+
     @GetMapping("/books")
     public Object getBookByIsbnOrGenre(@RequestParam(value = "searchType", required = true) String searchType,
                                        @RequestParam(value = "isbns", required = false) List<String> isbns,
