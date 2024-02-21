@@ -1,4 +1,4 @@
-package com.pikabook;
+package com.pikabook.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

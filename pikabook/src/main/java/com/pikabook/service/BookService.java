@@ -1,5 +1,7 @@
-package com.pikabook;
+package com.pikabook.service;
 
+import com.pikabook.entity.Book;
+import com.pikabook.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

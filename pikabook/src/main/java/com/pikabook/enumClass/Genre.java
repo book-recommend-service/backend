@@ -1,4 +1,4 @@
-package com.pikabook;
+package com.pikabook.enumClass;
 
 public enum Genre {
     romance("로맨스"),

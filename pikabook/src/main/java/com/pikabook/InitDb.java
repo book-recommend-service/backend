@@ -1,6 +1,8 @@
 package com.pikabook;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pikabook.entity.Book;
+import com.pikabook.service.BookService;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
