@@ -42,4 +42,9 @@ public class BookService {
         List<Book> books = bookRepository.findByTag(tag);
         return books;
     }
+
+    public List<Book> findByKeyword(String keyword) {
+        List<Book> books = bookRepository.findByKeyword(keyword);
+        return books;
+    }
 }

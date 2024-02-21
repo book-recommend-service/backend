@@ -14,4 +14,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Query("select b from Book b where b.tag LIKE %:genre%")
     List<Book> findByTag(@Param("genre") String genre);
 
+    @Query("select b from Book b where b.keywords LIKE %:keyword%")
+    List<Book> findByKeyword(@Param("keyword") String keyword);
 }

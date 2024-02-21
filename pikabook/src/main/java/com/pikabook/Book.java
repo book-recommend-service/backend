@@ -39,4 +39,16 @@ public class Book {
     private String descPrize;
     private String tagGenre;
 
+
+    public BookDto toDto() {
+        return new BookDto(
+                this.isbnYes24,
+                this.imageUrlYes24,
+                this.title,
+                this.authors,
+                this.description,
+                this.itemUrlYes24
+        );
+    }
+
 }

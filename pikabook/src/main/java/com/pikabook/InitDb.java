@@ -34,7 +34,7 @@ public class InitDb {
             Book[] books = new Book[1000];
             try {
                 // JSON 파일 경로
-                String jsonFilePath = "pikabook/src/main/java/com/pikabook/jsonData.json";
+                String jsonFilePath = "pikabook/src/main/resources/jsonData.json";
 
                 // ObjectMapper 생성
                 ObjectMapper objectMapper = new ObjectMapper();

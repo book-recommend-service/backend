@@ -1,13 +1,14 @@
 package com.pikabook;
 
 public enum Genre {
-    ROMANCE("로맨스"),
-    FANTASY("판타지"),
-    MOVIEDRAMA("영화드라마원작"),
-    HUMAN_DRAMA("인간드라마"),
-    EXISTENTIAL("실존주의"),
-    SOCIAL_CRITICISM("사회비판"),
-    NOBEL_PRIZE("노벨상수상자");
+    romance("로맨스"),
+    fantasy("판타지"),
+    original("영화드라마원작"),
+    insight("인간드라마"),
+    universe("실존주의"),
+    history("사회비판"),
+    nobelprize("노벨상수상자"),
+    korean("한국문학");
 
     private final String label;
 
