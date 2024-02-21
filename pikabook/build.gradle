@@ -31,6 +31,22 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+
+
+    // MySQL JDBC 드라이버
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // SLF4J: 간단한 로깅 API
+    implementation 'org.slf4j:slf4j-api:2.0.6'
+    // Logback: SLF4J의 구현체로서 로깅을 위한 라이브러리
+    testImplementation 'ch.qos.logback:logback-classic:1.4.5'
+    // SLF4J의 Simple Logger 구현체 (옵션, 다른 로깅 구현체도 사용 가능)
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
+    // P6Spy: JDBC 쿼리 로깅을 위한 스타터
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
+
+
 }
 
 tasks.named('test') {
