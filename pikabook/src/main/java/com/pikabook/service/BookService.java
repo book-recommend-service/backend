@@ -2,18 +2,21 @@ package com.pikabook.service;
 
 import com.pikabook.entity.Book;
 import com.pikabook.repository.BookRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
 public class BookService {
 
-    private final BookRepository bookRepository;
+    private BookRepository bookRepository;
+    @Autowired
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     @Transactional
     public void save(Book book) {
@@ -40,13 +43,13 @@ public class BookService {
         return book;
     }
 
-    public List<Book> findByGenre(String tag) {
-        List<Book> books = bookRepository.findByTag(tag);
+    public List<Book> findByGenre(String genre) {
+        List<Book> books = bookRepository.findByGenre(genre);
         return books;
     }
 
-    public List<Book> findByKeyword(String keyword) {
-        List<Book> books = bookRepository.findByKeyword(keyword);
+    public List<Book> findByKeywordAndGenre(String keyword, String genre) {
+        List<Book> books = bookRepository.findByKeywordAndGenre(keyword, genre);
         return books;
     }
 }

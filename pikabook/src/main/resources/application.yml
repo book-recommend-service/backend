@@ -43,7 +43,7 @@ logging:
     org:
       hibernate:
         type: trace
-        SQL: debug
+#        SQL: debug
 
 
 
