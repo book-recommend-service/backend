@@ -2,7 +2,7 @@ package com.pikabook.controller;
 
 import com.pikabook.entity.Book;
 import com.pikabook.entity.BookDto;
-import com.pikabook.enumClass.SearchType;
+import com.pikabook.entity.SearchType;
 import com.pikabook.service.BookService;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -17,8 +17,13 @@ import java.util.*;
 @RestController
 public class BookController {
 
-    @Autowired
     private BookService bookService;
+
+    @Autowired
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
+
 
     @PostMapping("/")
     public Book addBooK(@RequestBody Book book) {
@@ -76,7 +81,8 @@ public class BookController {
     @GetMapping("/books")
     public Object getBookByIsbnOrGenre(@RequestParam(value = "searchType", required = true) String searchType,
                                        @RequestParam(value = "isbns", required = false) List<String> isbns,
-                                       @RequestParam(value = "keywords", required = false) List<String> keywords) {
+                                       @RequestParam(value = "keywords", required = false) List<String> keywords,
+                                       @RequestParam(value = "genre", required = true)String genre) {
 
         List<BookDto> bookDtos = new ArrayList<>();
 
@@ -122,7 +128,7 @@ public class BookController {
                 String oriKeyword = keyword;
 
                 keyword = "\'" + keyword + "\'";
-                List<Book> books = bookService.findByKeyword(keyword);
+                List<Book> books = bookService.findByKeywordAndGenre(keyword,genre);
 
                 //첫번째 원소 선택한 키워드가 키워드 리스트의 앞쪽에 있는 책부터
                 for (Book book : books) {
@@ -178,6 +184,7 @@ public class BookController {
             sort(keySet, rankMap);
 
 
+            log.info("총 책 권수 : "+ keySet.size());
             int responseCount = 5;
             for (Book book : keySet) {
                 BookDto dto = book.toDto();
@@ -187,6 +194,7 @@ public class BookController {
                     break;
                 }
             }
+
             return bookDtos;
         }
         return "Error";

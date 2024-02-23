@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 @SpringBootTest
 
@@ -72,9 +71,9 @@ class BookServiceTest {
         String keyword = "신화";
 
         //when
-        List<Book> books = bookService.findByKeyword(keyword);
-
-        System.out.println("books = " + books);
+//        List<Book> books = bookService.findByKeywordAndGenre(keyword);
+//
+//        System.out.println("books = " + books);
 
         //then
 
